@@ -4,23 +4,6 @@
 nohup java -jar target/example.jar > ./luvx.log < /dev/null &
 ```
 
-# 配置表
-
-```sql
-drop table if exists sys_app_config;
-create table `sys_app_config` (
-  `config_id` int(11) not null auto_increment,
-  `config_key` varchar(255) not null,
-  `config_value` varchar(255) not null,
-  `is_valid` tinyint(1) not null default 1,
-  `create_time` timestamp not null default current_timestamp comment '创建时间',
-  `create_user` varchar(255) not null default '',
-  `update_time` timestamp not null default current_timestamp on update current_timestamp comment '更新时间',
-  `update_user` varchar(255) not null default '',
-  primary key (`config_id`),
-  unique key `uk_config_key` (`config_key`) using btree comment '配置唯一'
-) engine=innodb auto_increment=1 default charset=utf8mb4 comment='系统配置表';
-```
 
 # Restful接口
 
