@@ -1,11 +1,13 @@
 package org.luvx.module.data.mapper;
 
+import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 import org.luvx.base.BaseTest;
+import org.luvx.module.data.entity.ColumnDO;
+import org.luvx.module.data.entity.TableDO;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * @ClassName: org.luvx.module.data.mapper
@@ -20,9 +22,26 @@ public class DataMapperTest extends BaseTest {
 
     @Test
     public void listTables() {
-        // List<Map<String, Object>> list = mapper.listTables();
-        // for (Map<String, Object> map : list) {
-        //     System.out.println(map.size());
-        // }
+        List<TableDO> list = mapper.getAllTable();
+        System.out.println(JSON.toJSONString(list));
     }
+
+    @Test
+    public void getTableTest() {
+        TableDO table = mapper.getTable("boot", "user");
+        System.out.println(JSON.toJSONString(table));
+    }
+
+    @Test
+    public void getPkTest() {
+        ColumnDO pk = mapper.getPk("boot", "user");
+        System.out.println(pk);
+    }
+
+    @Test
+    public void getColumnsTest() {
+        List<ColumnDO> columnList = mapper.getColumns("boot", "user");
+        System.out.println(columnList);
+    }
+
 }

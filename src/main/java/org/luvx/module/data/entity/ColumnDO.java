@@ -21,6 +21,15 @@ public class ColumnDO {
     private String columnName;
     private String dataType;
     private String comment;
+
+    /**
+     * 对应类名
+     */
+    private String className;
+    /**
+     * 对应对象名
+     */
+    private String objectName;
 }
 
 

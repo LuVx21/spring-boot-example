@@ -20,8 +20,19 @@ import java.util.List;
 public class TableDO {
     private String         dbName;
     private String         tableName;
+    /**
+     * 不支持联合主键
+     */
     private ColumnDO       pk;
     private List<ColumnDO> columns;
     private String         comment;
-    private String         engine;
+
+    /**
+     * 对应类名
+     */
+    private String className;
+    /**
+     * 对应对象名
+     */
+    private String objectName;
 }
