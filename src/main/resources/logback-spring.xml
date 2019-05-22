@@ -58,17 +58,8 @@
         </root>
     </springProfile>
 
-    <!-- 开发环境 -->
-    <springProfile name="dev">
-        <root level="${logging.level}">
-            <appender-ref ref="ROOT-APPENDER"/>
-            <appender-ref ref="ERROR-APPENDER"/>
-            <appender-ref ref="CONSOLE-APPENDER"/>
-        </root>
-    </springProfile>
-
-    <!-- 测试环境 -->
-    <springProfile name="test">
+    <!-- 开发,测试环境 -->
+    <springProfile name="dev,test">
         <root level="${logging.level}">
             <appender-ref ref="ROOT-APPENDER"/>
             <appender-ref ref="ERROR-APPENDER"/>

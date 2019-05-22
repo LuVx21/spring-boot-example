@@ -16,5 +16,6 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "user")
 @Component
 public class UserProperties {
-    private String name;
+    private String  name;
+    private boolean enabled;
 }

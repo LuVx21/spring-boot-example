@@ -1,7 +1,7 @@
 package org.luvx;
 
 import lombok.extern.slf4j.Slf4j;
-import org.luvx.common.utils.SpringContextHolder;
+import org.luvx.common.utils.ApplicationContextUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
@@ -23,10 +23,10 @@ public class Application {
     }
 
     private static void applicationInfo() {
-        ServerProperties serverProperties = SpringContextHolder.getBean(ServerProperties.class);
-        DataSourceProperties dataSourceProperties = SpringContextHolder.getBean(DataSourceProperties.class);
+        ServerProperties serverProperties = ApplicationContextUtils.getBean(ServerProperties.class);
+        DataSourceProperties dataSourceProperties = ApplicationContextUtils.getBean(DataSourceProperties.class);
 
-        log.info("服务运行在{}", serverProperties.getPort());
-        log.info("数据库服务{}", dataSourceProperties.getUrl());
+        log.info("服务运行在:{}", serverProperties.getPort());
+        log.info("数据库服务:{}", dataSourceProperties.getUrl());
     }
 }

@@ -56,6 +56,8 @@ Ehcache
 
 Redis
 
+能否通过java判断redis是否已经启动?没有则启动?
+
 Mongodb
 
 # 任务调度
@@ -74,14 +76,18 @@ Shiro
 
 使用新日期API
 
-Java8里面新出来了一些API，LocalDate、LocalTime、LocalDateTime 非常好用 如果想要在JDBC中，使用Java8的日期LocalDate、LocalDateTime，则必须要求数据库驱动的版本不能低于4.2
+Java8里面新出来了一些API，LocalDate、LocalTime、LocalDateTime 非常好用 
+如果想要在JDBC中，使用Java8的日期LocalDate、LocalDateTime，则必须要求数据库驱动的版本不能低于4.2
 mysql-connector-java版本低于5.1.37，则数据库的驱动版本低于4.2
 
+```
 <dependency>
     <groupId>org.mybatis</groupId>
     <artifactId>mybatis-typehandlers-jsr310</artifactId>
     <version>1.0.1</version>
 </dependency>
+```
+
 https://blog.csdn.net/weixin_38553453/article/details/75050632
 
 
@@ -100,4 +106,11 @@ https://blog.csdn.net/weixin_38553453/article/details/75050632
 
 # WebFlux
 
+# 文件上传下载
 
+# 调用命令行
+
+# 怎么侦测文件已经发生变化
+
+如配置文件,文件修改并保存能够立刻侦测到并加载
+WatchService
