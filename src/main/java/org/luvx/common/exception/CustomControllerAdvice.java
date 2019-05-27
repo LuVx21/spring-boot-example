@@ -1,9 +1,11 @@
 package org.luvx.common.exception;
 
+import com.baomidou.mybatisplus.extension.api.R;
+import com.baomidou.mybatisplus.extension.enums.ApiErrorCode;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.luvx.modules.common.Response;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -14,17 +16,13 @@ import javax.servlet.http.HttpServletRequest;
  * @Date: 2019/4/21 19:52
  */
 @Slf4j
-@ControllerAdvice
+@RestControllerAdvice
 public class CustomControllerAdvice {
 
     @ExceptionHandler({Exception.class})
-    public ModelAndView handException(HttpServletRequest request, Exception e) {
+    public R<String> handException(HttpServletRequest request, Exception e) {
         log.error("全局异常处理: ", e);
-        System.out.println(request.getRequestURI());
-
-        ModelAndView mv = new ModelAndView();
-        mv.addObject("message", e.getMessage());
-        mv.setViewName("global_error");
-        return mv;
+        return Response.restResult(request.getRequestURI(), ApiErrorCode.FAILED)
+                .setMsg(e.getMessage());
     }
 }
