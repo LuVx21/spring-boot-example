@@ -33,6 +33,7 @@
         <log4j.version>2.10.0</log4j.version>
         <swagger.version>2.9.2</swagger.version>
         <fastjson.version>1.2.56</fastjson.version>
+        <quartz.version>2.3.1</quartz.version>
     </properties>
 
     <dependencies>
@@ -65,7 +66,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.1.14</version>
+            <version>1.1.16</version>
         </dependency>
 
         <dependency>
@@ -206,6 +207,18 @@
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity</artifactId>
             <version>1.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>${quartz.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.uuid</groupId>
+            <artifactId>java-uuid-generator</artifactId>
+            <version>3.2.0</version>
         </dependency>
     </dependencies>
 
