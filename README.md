@@ -36,6 +36,7 @@ http://127.0.0.1:8090/druid/index.html
 # swagger
 
 http://localhost:8090/swagger-ui.html
+index.html
 
 # 动态数据源
 
@@ -114,3 +115,9 @@ https://blog.csdn.net/weixin_38553453/article/details/75050632
 
 如配置文件,文件修改并保存能够立刻侦测到并加载
 WatchService
+
+
+## 怎样动态监测某个方法的执行时间
+
+想知道某个方法的执行时间, 不想看时再配置一下, 不让它计算执行时间
+
