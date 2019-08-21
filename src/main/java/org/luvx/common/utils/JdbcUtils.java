@@ -25,7 +25,7 @@ public class JdbcUtils {
 
     private static final String args = "?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=true&allowMultiQueries=true&autoReconnect=true";
 
-private static enableCache = false;
+    private static boolean enableCache = false;
 
     /**
      * 数据库连接缓存
